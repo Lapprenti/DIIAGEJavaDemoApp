@@ -8,6 +8,7 @@ import diiage.potherat.demo.demoapp3.dal.repository.SWRepository;
 import diiage.potherat.demo.demoapp3.dal.retrofit.livedata.ApiResponse;
 import diiage.potherat.demo.demoapp3.model.sw.People;
 import diiage.potherat.demo.demoapp3.model.sw.SWModelList;
+import diiage.potherat.demo.demoapp3.model.sw.Vehicle;
 import retrofit2.Call;
 import retrofit2.http.GET;
 import retrofit2.http.Path;
@@ -17,4 +18,6 @@ public interface SwRetrofit extends SWRepository {
     LiveData<ApiResponse<SWModelList<People>>> getPeoples();
     @GET("people/{id}/")
     LiveData<ApiResponse<People>> getPeople(@Path("id") Integer id);
+    @GET("vehicles/{id}/")
+    LiveData<ApiResponse<Vehicle>> getVehicle(@Path("id") Integer id);
 }
